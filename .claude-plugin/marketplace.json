@@ -1,0 +1,22 @@
+{
+  "name": "skill-squared-marketplace",
+  "description": "Skill-Squared skill marketplace for Claude Code",
+  "owner": {
+    "name": "Adrian",
+    "email": "syfyufei@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "skill-squared",
+      "description": "A skill for managing and maintaining Claude Code skills - create projects, add commands, sync to marketplaces, and validate structure",
+      "version": "0.1.0",
+      "source": "./",
+      "author": {
+        "name": "Adrian",
+        "email": "syfyufei@gmail.com"
+      },
+      "keywords": ["skills", "management", "development", "tools", "meta"],
+      "homepage": "https://github.com/syfyufei/skill-squared"
+    }
+  ]
+}

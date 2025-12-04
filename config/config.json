@@ -1,0 +1,44 @@
+{
+  "validation": {
+    "required_files": [
+      ".claude-plugin/marketplace.json",
+      ".claude-plugin/plugin.json",
+      "skills/{skill_name}.md",
+      "install.sh",
+      "README.md"
+    ],
+    "required_frontmatter": [
+      "name",
+      "description"
+    ],
+    "executable_files": [
+      "install.sh"
+    ]
+  },
+  "sync": {
+    "backup_enabled": true,
+    "backup_suffix": ".backup",
+    "confirm_overwrite": true,
+    "files_to_sync": [
+      "skills/{skill_name}.md",
+      ".claude/commands/"
+    ]
+  },
+  "templates": {
+    "skill_template_dir": "templates/skill",
+    "command_template_dir": "templates/command",
+    "variable_pattern": "{{(\\w+)}}"
+  },
+  "defaults": {
+    "author_name": "Your Name",
+    "author_email": "your.email@example.com",
+    "github_user": "yourusername",
+    "version": "0.1.0",
+    "license": "MIT"
+  },
+  "create": {
+    "initial_commands": [],
+    "create_examples": false,
+    "git_init": false
+  }
+}

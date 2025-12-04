@@ -1,0 +1,20 @@
+{
+  "name": "{{skill_name}}-marketplace",
+  "description": "{{skill_display_name}} skill marketplace for Claude Code",
+  "owner": {
+    "name": "{{author_name}}",
+    "email": "{{author_email}}"
+  },
+  "plugins": [
+    {
+      "name": "{{skill_name}}",
+      "description": "{{skill_description}}",
+      "version": "{{version}}",
+      "source": "./",
+      "author": {
+        "name": "{{author_name}}",
+        "email": "{{author_email}}"
+      }
+    }
+  ]
+}

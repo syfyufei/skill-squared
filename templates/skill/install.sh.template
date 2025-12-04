@@ -1,0 +1,51 @@
+#!/bin/bash
+
+set -e
+
+echo "🚀 Installing {{skill_display_name}}..."
+echo ""
+
+# Check if skill.md exists to determine if this is local or remote install
+if [ -f "skills/{{skill_name}}.md" ]; then
+    LOCAL_INSTALL=true
+else
+    LOCAL_INSTALL=false
+fi
+
+if [ "$LOCAL_INSTALL" = true ]; then
+    # Local installation
+    MARKETPLACE_PATH=$(pwd)
+    echo "🔧 Adding local marketplace from: $MARKETPLACE_PATH"
+    claude plugin marketplace add "$MARKETPLACE_PATH"
+
+    echo "📦 Installing {{skill_name}} from local marketplace..."
+    claude plugin install {{skill_name}}@{{skill_name}}-marketplace
+else
+    # Remote installation (clone from GitHub)
+    echo "📥 Cloning {{skill_name}} from GitHub..."
+    TEMP_DIR=$(mktemp -d)
+    cd "$TEMP_DIR"
+
+    git clone {{repository_url}}.git
+    cd {{skill_name}}
+
+    MARKETPLACE_PATH=$(pwd)
+    echo "🔧 Adding marketplace from: $MARKETPLACE_PATH"
+    claude plugin marketplace add "$MARKETPLACE_PATH"
+
+    echo "📦 Installing {{skill_name}}..."
+    claude plugin install {{skill_name}}@{{skill_name}}-marketplace
+
+    # Cleanup
+    cd ~
+    rm -rf "$TEMP_DIR"
+fi
+
+echo ""
+echo "✅ {{skill_display_name}} installed successfully!"
+echo ""
+echo "Verify installation:"
+echo "  /help"
+echo ""
+echo "Get started with natural language or slash commands"
+echo ""
