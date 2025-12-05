@@ -2,15 +2,18 @@
   "name": "skill-squared",
   "version": "0.1.0",
   "description": "A skill for managing and maintaining Claude Code skills - create projects, add commands, sync to marketplaces, and validate structure",
-  "author": "Adrian <syfyufei@gmail.com>",
+  "author": {
+    "name": "Adrian",
+    "email": "syfyufei@gmail.com"
+  },
   "repository": "https://github.com/syfyufei/skill-squared",
   "keywords": ["skills", "management", "development", "tools", "meta"],
   "license": "MIT",
-  "skills": ["skills/skill-squared.md"],
+  "skills": ["./skills/skill-squared.md"],
   "commands": [
-    ".claude/commands/create.md",
-    ".claude/commands/command.md",
-    ".claude/commands/sync.md",
-    ".claude/commands/validate.md"
+    "./.claude/commands/create.md",
+    "./.claude/commands/command.md",
+    "./.claude/commands/sync.md",
+    "./.claude/commands/validate.md"
   ]
 }

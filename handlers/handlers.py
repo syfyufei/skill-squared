@@ -310,10 +310,7 @@ This command should:
                 if 'commands' not in plugin_data:
                     plugin_data['commands'] = []
 
-                plugin_data['commands'].append({
-                    'name': command_name,
-                    'path': f'.claude/commands/{command_name}.md'
-                })
+                plugin_data['commands'].append(f'./.claude/commands/{command_name}.md')
 
                 # Write back
                 with open(plugin_json_path, 'w', encoding='utf-8') as f:
